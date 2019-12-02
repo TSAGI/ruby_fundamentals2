@@ -9,7 +9,7 @@ def fastest_person(num) #number of people racing
     for i in 1..num    
         puts "How far did person #{i} run (in metres)?"
         distance[i] = gets.chomp.to_f
-        puts "How long (in minutes) did person #{i} run take to run #{distance[i]} metres?"
+        puts "How long (in minutes) did person #{i} take to run #{distance[i]} metres?"
         mins[i] = gets.chomp.to_f    
         secs[i] = mins[i] * 60
         speed[i] = distance[i]/secs[i]
