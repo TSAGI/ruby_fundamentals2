@@ -22,5 +22,5 @@ output = {}
                     "hebrew:" => hb[i]
                     }
 }
-print output
-puts
+puts output
+
