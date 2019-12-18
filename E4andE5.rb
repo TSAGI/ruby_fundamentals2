@@ -9,26 +9,23 @@ her_dogs = [
     { :name => 'Grover', :position => 4 },
   ]
 
-def get_absent_dogs(hashArray)    
-  absent_dogs = Marshal.load(Marshal.dump(hashArray))  
-  absent_dogs.delete_if{|h| h[:position] < 11}    
-  return absent_dogs
+def get_absent_dogs(hashArray)     
+    hashArray.select {|x| x[:position] > 10} 
 end
 
-def call_absent_dogs(hashArray)
-    absent_dogs = get_absent_dogs(hashArray)
-    absent_dogs.map {|x| puts "Come back, #{x[:name]}!"}
+def call_absent_dogs(hashArray)    
+    get_absent_dogs(hashArray).map {|x| puts "Come back, #{x[:name]}!"}
 end
 
 call_absent_dogs(my_dogs)
 call_absent_dogs(her_dogs)
 
 def chase_squirrel(hashArray)
-    newArray = hashArray.map {|x| x[:position] + 5 }    
-end
- 
-def return_dogs(hashArray)    
-   newArray = hashArray.map! {|x| x[:position] = 0}   
+    hashArray.map! {|x| x[:position] += 5; x }    
 end
 
-  
+def return_dogs(hashArray)    
+   hashArray.map! {|x| x[:position] = 0; x}   
+end
+
+
