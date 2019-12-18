@@ -13,7 +13,7 @@ hb = ['echad', 'shtaym', 'shalosh', 'arba', 'chamesh', 'shesh', 'sheva', 'shmona
 #   ...
 #   9: {french: 'neuf', english: 'nine'}
 # }
-
+#Consider adding translations for any other languages you speak, using the same format.
 output = {}
 (0...digits.length).each {|i|
    output["#{digits[i]}:"] = {
